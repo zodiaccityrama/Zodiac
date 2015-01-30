@@ -47,58 +47,80 @@
 </ion-side-menus>
 </body>
 
-<!-- Horoscop (Alege Zodia) HOME -->
-<script id="horoscop.html" type="text/ng-template">
+<!-- Horoscop Abstract - template -->
+<script id="horoscop-abstract.html" type="text/ng-template">
+	<ion-view>
+		<ion-nav-view></ion-nav-view>
+	</ion-view>
+</script>
+
+<!-- Horoscop Lista(Alege Zodia) HOME -->
+<script id="horoscop-lista.html" type="text/ng-template">
 	<ion-view view-title="Horoscop">
 		<ion-content id="horoscop">
-			<h1>asdasdasdas</h1>
-
 			<div class="lista-zodii">
 				<div class="row">
 					<div class="col">
-						<button class="button button-calm"><i class="icon-zodia berbec"></i></button>
+						<a class="button button-calm" href="#/horoscop/berbec"><i class="icon-zodia berbec"></i></a>
 					</div>
 					<div class="col">
-						<button class="button button-dark"><i class="icon-zodia taur"></i></button>
+						<a class="button button-dark" href="#/horoscop/taur"><i class="icon-zodia taur"></i></a>
 					</div>
 					<div class="col">
-						<button class="button button-assertive"><i class="icon-zodia gemeni"></i></button>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<button class="button"><i class="icon-zodia rac"></i></button>
-					</div>
-					<div class="col">
-						<button class="button"><i class="icon-zodia leu"></i></button>
-					</div>
-					<div class="col">
-						<button class="button"><i class="icon-zodia fecioara"></i></button>
+						<a class="button button-assertive"><i class="icon-zodia gemeni"></i></a>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<button class="button"><i class="icon-zodia balanta"></i></button>
+						<a class="button button-light"><i class="icon-zodia rac"></i></a>
 					</div>
 					<div class="col">
-						<button class="button"><i class="icon-zodia scorpion"></i></button>
+						<a class="button button-positive"><i class="icon-zodia leu"></i></a>
 					</div>
 					<div class="col">
-						<button class="button"><i class="icon-zodia sagetator"></i></button>
+						<a class="button button-balanced"><i class="icon-zodia fecioara"></i></a>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col">
-						<button class="button"><i class="icon-zodia capricorn"></i></button>
+						<a class="button button-energized"><i class="icon-zodia balanta"></i></a>
 					</div>
 					<div class="col">
-						<button class="button"><i class="icon-zodia varsator"></i></button>
+						<a class="button button-royal"><i class="icon-zodia scorpion"></i></a>
 					</div>
 					<div class="col">
-						<button class="button"><i class="icon-zodia pesti"></i></button>
+						<a class="button button-stable"><i class="icon-zodia sagetator"></i></a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<a class="button button-balanced"><i class="icon-zodia capricorn"></i></a>
+					</div>
+					<div class="col">
+						<a class="button button-assertive"><i class="icon-zodia varsator"></i></a>
+					</div>
+					<div class="col">
+						<a class="button button-dark"><i class="icon-zodia pesti"></i></a>
 					</div>
 				</div>
 			</div>
+		</ion-content>
+	</ion-view>
+</script>
+
+<!-- Horoscop Zodia -->
+<script id="horoscop-zodia.html" type="text/ng-template">
+	<ion-view view-title="Horoscop Taur">
+		<ion-content id="horoscop-zodia" class="padding">
+			<h1>
+				<i class="icon-zodia taur-2"></i> Taur <i class="icon-zodia taur-3"></i> <i class=" icon-zodia taur-4"></i>
+				<span class="subtitle">30 ianuarie 2015</span>
+			</h1>
+			<p>
+
+			   Va simtiti in forma si faceti planuri indraznete de viitor. Este un moment prielnic pentru investitii pe termen lung, pentru a incepe noi afaceri si pentru calatorii in interes personal.
+
+			   Profitati de moralul ridicat pe care il aveti astazi! Aveti mari sanse de reusita. </p>
 		</ion-content>
 	</ion-view>
 </script>

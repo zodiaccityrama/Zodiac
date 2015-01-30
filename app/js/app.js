@@ -25,13 +25,23 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
 zodiacA.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-        .state('app', {
-           url        : "/horoscop",
-           // abstract   : true,
-            templateUrl: "horoscop.html",
+        .state('horoscop', {
+            url        : "/horoscop",
+            abstract   : true,
+            templateUrl: "horoscop-abstract.html",
             controller : 'HoroscopCtrl'
         })
-;
+        .state('horoscop.lista', {
+            url        : "/lista",
+            templateUrl: "horoscop-lista.html",
+            controller : 'HoroscopCtrl'
+        })
+        .state('horoscop.zodia', {
+            url        : "/:zodia",
+            templateUrl: "horoscop-zodia.html",
+            controller : 'HoroscopZodiaCtrl'
+        })
+    ;
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/horoscop');
+    $urlRouterProvider.otherwise('/horoscop/lista');
 });
