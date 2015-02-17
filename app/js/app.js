@@ -32,14 +32,12 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
     });
 
 
-    document.addEventListener("deviceready", function () {
+    document.addEventListener("deviceready", function () { //asta merge
         if (ionic.Platform.isWebView()) {
             gaPlugin = window.plugins.gaPlugin;
             gaPlugin.init(function () {}, function () {}, "UA-59857602-2", 10);
         }
-        alert('sdsd');
-
-    }, false);
+     }, false);
 
 
     $rootScope.zodii = {
