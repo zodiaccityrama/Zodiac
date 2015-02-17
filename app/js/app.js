@@ -1,3 +1,12 @@
+var admobid = { // for Android
+    banner      : 'ca-app-pub-1537264536593688/3668596069',
+    interstitial: 'ca-app-pub-1537264536593688/2691390464'
+};
+
+var gaPlugin;
+
+
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -9,11 +18,6 @@ var zodiacA = angular.module('zodiacApp', [
     'zodiac.controllers'
 ]);
 
-var admobid = { // for Android
-    banner      : 'ca-app-pub-1537264536593688/3668596069',
-    interstitial: 'ca-app-pub-1537264536593688/2691390464'
-};
-
 zodiacA.run(function ($ionicPlatform, $rootScope) {
 
     $ionicPlatform.ready(function () {
@@ -24,6 +28,9 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
+
+        gaPlugin = window.plugins.gaPlugin;
+        gaPlugin.init(function () {}, function () {}, "UA-59857602-2", 10);
     });
 
     $rootScope.zodii = {
