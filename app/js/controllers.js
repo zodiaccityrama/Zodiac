@@ -8,7 +8,9 @@ zodiacC.controller('AppCtrl', function ($scope, $rootScope) {
 zodiacC.controller('HoroscopCtrl', function ($scope, $rootScope) {
     $rootScope.zodiiRow = $rootScope.zodiiToRow(3);
     if (ionic.Platform.isWebView()) {
-        gaPlugin.trackPage(nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
+        ionic.Platform.ready(function () {
+            gaPlugin.trackPage(nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
+        });
     }
 });
 
