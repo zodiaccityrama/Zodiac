@@ -27,10 +27,16 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
+
+
+    });
+
+    ionic.Platform.ready(function () {
         if (ionic.Platform.isWebView()) {
             gaPlugin = window.plugins.gaPlugin;
             gaPlugin.init(function () {}, function () {}, "UA-59857602-2", 10);
         }
+        alert('sdsd');
     });
 
     $rootScope.zodii = {
