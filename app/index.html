@@ -61,7 +61,7 @@
 			<div class="lista-zodii">
 				<div class="row" ng-repeat="row in zodiiRow">
 					<div class="col" ng-repeat="zodie in row">
-						<a class="button button-{{zodie.iconita}}" href="#/horoscop/{{zodie.iconita}}"><i class="icon-zodia {{zodie.iconita}}-2"></i></a>
+						<a class="button button-{{zodie.iconita}}" href="#/horoscop/{{zodie.id}}"><i class="icon-zodia {{zodie.iconita}}-2"></i></a>
 					</div>
 				</div>
 			</div>
@@ -90,10 +90,10 @@
 	<ion-view view-title="Horoscop Taur">
 		<ion-content id="horoscop-zodia" class="padding">
 			<h1>
-				<i class="icon-zodia taur-2 bg-taur"></i>
+				<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
 
 				<div>
-					Taur
+					{{zodii[zodia].nume}}
 					<span class="subtitle">30 ianuarie 2015</span>
 				</div>
 			</h1>

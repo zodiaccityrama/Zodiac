@@ -9,19 +9,22 @@ zodiacC.controller('HoroscopCtrl', function ($scope, $rootScope) {
     $rootScope.zodiiRow = $rootScope.zodiiToRow(3);
 });
 
-zodiacC.controller('HoroscopZodiaCtrl', function () {
+zodiacC.controller('HoroscopZodiaCtrl', function ($scope, $rootScope, $stateParams) {
     ionic.Platform.ready(function () {
-        if (AdMob) {
-            AdMob.createBanner(admobid.banner);
-            AdMob.prepareInterstitial({
-                adId    : admobid.interstitial,
-                autoShow: false
-            });
-            AdMob.showInterstitial();
-
+        if (ionic.Platform.isWebView()) {
+            if (AdMob) {
+                AdMob.createBanner(admobid.banner);
+                AdMob.prepareInterstitial({
+                    adId    : admobid.interstitial,
+                    autoShow: true
+                });
+                //AdMob.showInterstitial();
+            }
         }
     });
 
+
+    $scope.zodia = $stateParams.zodia;
 
 
 });

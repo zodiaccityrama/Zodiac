@@ -87,6 +87,7 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             pushed = false;
             i++;
             subArray[i] = $rootScope.zodii[key];
+            subArray[i].id = key;
             if (i == lengthofsublist) {
                 pushed = true;
                 k++;
