@@ -8,7 +8,9 @@ zodiacC.controller('AppCtrl', function ($scope, $rootScope) {
 zodiacC.controller('HoroscopCtrl', function ($scope, $rootScope) {
     $rootScope.zodiiRow = $rootScope.zodiiToRow(3);
     if (ionic.Platform.isWebView()) {
-        gaPlugin.trackPage(function () {}, function (error) {
+        gaPlugin.trackPage(function (sss) {
+            alert('sss - ' + sss);
+        }, function (error) {
             alert('nativePluginErrorHandler - ' + error);
         }, "/horoscop/lista");
     }

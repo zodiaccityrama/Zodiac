@@ -41,10 +41,7 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
                     alert('nativePluginErrorHandler - ' + error);
                 },
                 "UA-59857602-2", 10);
-
-            alert(gaPlugin);
         }
-
     }, false);
 
 
