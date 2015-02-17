@@ -6,6 +6,16 @@ var admobid = { // for Android
 var gaPlugin;
 
 
+function nativePluginResultHandler(result) {
+    alert('nativePluginResultHandler - '+result);
+    //console.log('nativePluginResultHandler: ' + result);
+}
+
+function nativePluginErrorHandler(error) {
+    alert('nativePluginErrorHandler - '+error);
+    //console.log('nativePluginErrorHandler: ' + error);
+}
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -40,7 +50,7 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
                 function (error) {
                     alert('nativePluginErrorHandler - ' + error);
                 },
-                "UA-59857602-2", 10);
+                "UA-59857602-2", 1);
         }
     }, false);
 

@@ -8,11 +8,7 @@ zodiacC.controller('AppCtrl', function ($scope, $rootScope) {
 zodiacC.controller('HoroscopCtrl', function ($scope, $rootScope) {
     $rootScope.zodiiRow = $rootScope.zodiiToRow(3);
     if (ionic.Platform.isWebView()) {
-        gaPlugin.trackPage(function (sss) {
-            alert('sss - ' + sss);
-        }, function (error) {
-            alert('nativePluginErrorHandler - ' + error);
-        }, "/horoscop/lista");
+        gaPlugin.trackPage(nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
     }
 });
 
@@ -29,7 +25,7 @@ zodiacC.controller('HoroscopZodiaCtrl', function ($scope, $rootScope, $statePara
                 //AdMob.showInterstitial();
             }
 
-            gaPlugin.trackPage(function () {}, function () {}, "/horoscop/" + $rootScope[$scope.zodia].iconita);
+           // gaPlugin.trackPage(function () {}, function () {}, "/horoscop/" + $rootScope[$scope.zodia].iconita);
         }
     });
 
