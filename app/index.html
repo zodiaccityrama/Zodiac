@@ -87,17 +87,38 @@
 
 <!-- Horoscop Zodia -->
 <script id="horoscop-zodia.html" type="text/ng-template">
-	<ion-view view-title="Horoscop Taur">
-		<ion-content id="horoscop-zodia" class="padding">
-			<h1>
-				<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
+	<ion-view view-title="Horoscop Taur" cache-view="false">
+
+		<ion-tabs class="tabs-dark tabs-icon-left" id="horoscop-zodia">
+			<ion-tab title="Azi">
 				<div>
-					{{zodii[zodia].nume}}
-					<span class="subtitle">{{data}}</span>
+					<h1>
+						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
+
+						<div>
+							{{zodii[zodia].nume}}
+							<span class="subtitle">{{data}}</span>
+						</div>
+					</h1>
+					<div ng-bind-html="horoscop" class="horoscop"></div>
 				</div>
-			</h1>
-			<div ng-bind-html="horoscop" class="horoscop"></div>
-		</ion-content>
+			</ion-tab>
+
+			<ion-tab title="Maine">
+				<div>
+					<h1><i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i></h1>
+
+				</div>
+			</ion-tab>
+
+			<ion-tab title="Poimaine">
+				<div><h1><i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i></h1>
+
+				</div>
+			</ion-tab>
+
+		</ion-tabs>
+
 	</ion-view>
 </script>
 </html>
