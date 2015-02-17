@@ -26,13 +26,6 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
         }
     });
 
-    ionic.Platform.ready(function () {
-        AdMob.prepareInterstitial({
-            adId    : admobid.interstitial,
-            autoShow: false
-        });
-    });
-
     $rootScope.zodii = {
         0 : {
             'nume'   : 'Berbec',
