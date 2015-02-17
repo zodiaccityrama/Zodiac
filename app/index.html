@@ -91,15 +91,12 @@
 		<ion-content id="horoscop-zodia" class="padding">
 			<h1>
 				<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
-
 				<div>
 					{{zodii[zodia].nume}}
-					<span class="subtitle">30 ianuarie 2015</span>
+					<span class="subtitle">{{data}}</span>
 				</div>
 			</h1>
-			<p>
-				Va simtiti in forma si faceti planuri indraznete de viitor. Este un moment prielnic pentru investitii pe termen lung, pentru a incepe noi afaceri si pentru calatorii in interes personal.
-				Profitati de moralul ridicat pe care il aveti astazi! Aveti mari sanse de reusita. </p>
+			<div ng-bind-html="horoscop" class="horoscop"></div>
 		</ion-content>
 	</ion-view>
 </script>

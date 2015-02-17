@@ -12,8 +12,13 @@ zodiacC.controller('HoroscopCtrl', function ($scope, $rootScope) {
     //}
 });
 
-zodiacC.controller('HoroscopZodiaCtrl', function ($scope, $rootScope, $stateParams, $http) {
+zodiacC.controller('HoroscopZodiaCtrl', function ($scope, $rootScope, $stateParams, $http, $ionicLoading) {
     $scope.zodia = $stateParams.zodia;
+
+    $ionicLoading.show({
+        template: 'Loading...'
+    });
+
     ionic.Platform.ready(function () {
         if (ionic.Platform.isWebView()) {
             if (AdMob) {
@@ -29,10 +34,12 @@ zodiacC.controller('HoroscopZodiaCtrl', function ($scope, $rootScope, $statePara
         }
     });
 
-     $http.get('http://www.cityrama.ro/zodiac/jsons/get_horoscop.php', {id_zodie: $scope.zodia})
-         .success(function (data, status, headers, config) {
-        // this callback will be called asynchronously
-        // when the response is available
+
+     $http.get('http://www.cityrama.ro/zodiac/jsons/get_horoscop.php?id_zodie=' +  $scope.zodia)
+         .success(function (response, status, headers, config) {
+            $scope.horoscop = response.horoscop;
+            $scope.data = response.data;
+             $ionicLoading.hide();
     });
 
 });
