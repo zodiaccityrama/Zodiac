@@ -45,12 +45,7 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
     document.addEventListener("deviceready", function () { //asta merge
         if (ionic.Platform.isWebView()) {
             gaPlugin = window.plugins.gaPlugin;
-            gaPlugin.init(
-                function () {},
-                function (error) {
-                    alert('nativePluginErrorHandler - ' + error);
-                },
-                "UA-59857602-2", 1);
+            gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler,"UA-59857602-2", 1);
         }
     }, false);
 
