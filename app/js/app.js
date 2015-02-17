@@ -24,13 +24,13 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
+    });
 
-        if (AdMob) {
-            AdMob.prepareInterstitial({
-                adId    : admobid.interstitial,
-                autoShow: false
-            });
-        }
+    ionic.Platform.ready(function () {
+        AdMob.prepareInterstitial({
+            adId    : admobid.interstitial,
+            autoShow: false
+        });
     });
 
     $rootScope.zodii = {

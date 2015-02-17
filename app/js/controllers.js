@@ -13,7 +13,9 @@ zodiacC.controller('HoroscopZodiaCtrl', function () {
     ionic.Platform.ready(function () {
         if (AdMob) {
             AdMob.createBanner(admobid.banner);
-            AdMob.showInterstitial();
+            AdMob.isInterstitialReady(function (isready) {
+                if (isready) AdMob.showInterstitial();
+            });
         }
     });
 
