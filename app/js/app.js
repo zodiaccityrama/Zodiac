@@ -42,7 +42,7 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
                 },
                 "UA-59857602-2", 10);
 
-            alert('xxx');
+            alert(gaPlugin);
         }
 
     }, false);
