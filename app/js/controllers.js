@@ -8,7 +8,7 @@ zodiacC.controller('AppCtrl', function ($scope, $rootScope) {
 zodiacC.controller('HoroscopCtrl', function ($scope, $rootScope) {
     $rootScope.zodiiRow = $rootScope.zodiiToRow(3);
     if (ionic.Platform.isWebView()) {
-        gaPlugin.trackPage(function () {}, function () {}, "/horoscop/lista");
+        //gaPlugin.trackPage(function () {}, function () {}, "/horoscop/lista");
     }
 });
 
@@ -25,7 +25,7 @@ zodiacC.controller('HoroscopZodiaCtrl', function ($scope, $rootScope, $statePara
                 //AdMob.showInterstitial();
             }
 
-            gaPlugin.trackPage(function () {}, function () {}, "/horoscop/" + $rootScope[$scope.zodia].iconita);
+            //gaPlugin.trackPage(function () {}, function () {}, "/horoscop/" + $rootScope[$scope.zodia].iconita);
         }
     });
 

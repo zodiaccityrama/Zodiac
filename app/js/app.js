@@ -6,7 +6,6 @@ var admobid = { // for Android
 var gaPlugin;
 
 
-
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -28,9 +27,10 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
-
-        gaPlugin = window.plugins.gaPlugin;
-        gaPlugin.init(function () {}, function () {}, "UA-59857602-2", 10);
+        if (ionic.Platform.isWebView()) {
+            gaPlugin = window.plugins.gaPlugin;
+            gaPlugin.init(function () {}, function () {}, "UA-59857602-2", 10);
+        }
     });
 
     $rootScope.zodii = {
