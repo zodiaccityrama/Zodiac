@@ -17,6 +17,8 @@ var zodiacA = angular.module('zodiacApp', [
     'zodiac.controllers'
 ]);
 
+
+
 zodiacA.run(function ($ionicPlatform, $rootScope) {
 
     $ionicPlatform.ready(function () {
@@ -39,8 +41,12 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
                     alert('nativePluginErrorHandler - ' + error);
                 },
                 "UA-59857602-2", 10);
+
+            alert('xxx');
         }
+
     }, false);
+
 
 
     $rootScope.zodii = {
