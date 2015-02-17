@@ -29,8 +29,4 @@ zodiacC.controller('HoroscopZodiaCtrl', function ($scope, $rootScope, $statePara
         }
     });
 
-
-
-
-
 });
