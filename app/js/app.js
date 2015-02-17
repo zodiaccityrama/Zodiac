@@ -7,7 +7,7 @@ var gaPlugin;
 
 
 function nativePluginResultHandler(result) {
-    alert('nativePluginResultHandler - '+result);
+    //alert('nativePluginResultHandler - '+result);
     //console.log('nativePluginResultHandler: ' + result);
 }
 
