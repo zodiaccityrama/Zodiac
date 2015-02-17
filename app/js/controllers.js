@@ -10,5 +10,11 @@ zodiacC.controller('HoroscopCtrl', function ($scope, $rootScope) {
 });
 
 zodiacC.controller('HoroscopZodiaCtrl', function () {
+    ionic.Platform.ready(function () {
+        if (AdMob) AdMob.createBanner(admobid.banner);
+        else alert("buuu");
+    });
+
+
 
 });

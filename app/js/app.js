@@ -9,6 +9,10 @@ var zodiacA = angular.module('zodiacApp', [
     'zodiac.controllers'
 ]);
 
+var admobid = { // for Android
+    banner      : 'ca-app-pub-1537264536593688/3668596069',
+    interstitial: 'ca-app-pub-1537264536593688/2691390464'
+};
 
 zodiacA.run(function ($ionicPlatform, $rootScope) {
 
