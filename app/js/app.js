@@ -27,17 +27,20 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
-
-
     });
 
 
     document.addEventListener("deviceready", function () { //asta merge
         if (ionic.Platform.isWebView()) {
             gaPlugin = window.plugins.gaPlugin;
-            gaPlugin.init(function () {}, function () {}, "UA-59857602-2", 10);
+            gaPlugin.init(
+                function () {},
+                function (error) {
+                    alert('nativePluginErrorHandler - ' + error);
+                },
+                "UA-59857602-2", 10);
         }
-     }, false);
+    }, false);
 
 
     $rootScope.zodii = {
