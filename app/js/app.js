@@ -31,13 +31,16 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
 
     });
 
-    ionic.Platform.ready(function () {
+
+    document.addEventListener("deviceready", function () {
         if (ionic.Platform.isWebView()) {
             gaPlugin = window.plugins.gaPlugin;
             gaPlugin.init(function () {}, function () {}, "UA-59857602-2", 10);
         }
         alert('sdsd');
-    });
+
+    }, false);
+
 
     $rootScope.zodii = {
         0 : {
