@@ -72,17 +72,23 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
         }
     };
 
+    $rootScope.onNotification = function (e) {
+        alert('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+
+
+    };
+
     document.addEventListener("deviceready", function () { //asta merge
         if (ionic.Platform.isWebView()) {
             gaPlugin = window.plugins.gaPlugin;
             gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-59857602-2", 1);
 
-
-            var pushNotification = window.plugins.pushNotification;
+            pushNotification = window.plugins.pushNotification;
             pushNotification.register($rootScope.successHandler, $rootScope.errorHandler, {
                 "senderID": "396262474482",
-                "ecb"     : "$rootScope.onNotificationGCM"
+                "ecb"     : "$rootScope.onNotification"
             });
+
         }
     }, false);
 
