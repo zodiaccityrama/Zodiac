@@ -84,10 +84,12 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-59857602-2", 1);
 
             pushNotification = window.plugins.pushNotification;
+           /*
             pushNotification.register($rootScope.successHandler, $rootScope.errorHandler, {
                 "senderID": "396262474482",
                 "ecb"     : "onNotification"
             });
+            */
 
         }
     }, false);
