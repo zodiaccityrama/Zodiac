@@ -14,7 +14,7 @@
 
 <body ng-app="zodiacApp" ng-controler="AppCtrl">
 <ion-side-menus enable-menu-with-back-views="false">
-	<ion-side-menu-content>
+	<ion-side-menu-content edge-drag-threshold="true" drag-content="false">
 		<ion-nav-bar class="bar-dark">
 			<ion-nav-back-button></ion-nav-back-button>
 			<ion-nav-buttons side="left">
@@ -91,29 +91,44 @@
 
 		<ion-tabs class="tabs-dark tabs-icon-left" id="horoscop-zodia">
 			<ion-tab title="Azi">
-				<div>
+				<div on-swipe-left="goToTab(1)" on-swipe-right="goToTab(2)">
 					<h1>
 						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
 
 						<div>
 							{{zodii[zodia].nume}}
-							<span class="subtitle">{{data}}</span>
+							<span class="subtitle">{{horoscop.azi.data}}</span>
 						</div>
 					</h1>
-					<div ng-bind-html="horoscop" class="horoscop"></div>
+					<div ng-bind-html="horoscop.azi.horoscop" class="horoscop"></div>
 				</div>
 			</ion-tab>
 
 			<ion-tab title="Maine">
-				<div>
-					<h1><i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i></h1>
+				<div on-swipe-left="goToTab(2)" on-swipe-right="goToTab(0)">
+					<h1>
+						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
 
+						<div>
+							{{zodii[zodia].nume}}
+							<span class="subtitle">{{horoscop.maine.data}}</span>
+						</div>
+					</h1>
+					<div ng-bind-html="horoscop.maine.horoscop" class="horoscop"></div>
 				</div>
 			</ion-tab>
 
 			<ion-tab title="Poimaine">
-				<div><h1><i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i></h1>
+				<div on-swipe-left="goToTab(0)" on-swipe-right="goToTab(1)">
+					<h1>
+						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
 
+						<div>
+							{{zodii[zodia].nume}}
+							<span class="subtitle">{{horoscop.poimaine.data}}</span>
+						</div>
+					</h1>
+					<div ng-bind-html="horoscop.poimaine.horoscop" class="horoscop"></div>
 				</div>
 			</ion-tab>
 
