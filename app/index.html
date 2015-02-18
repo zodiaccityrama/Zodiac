@@ -91,7 +91,7 @@
 
 		<ion-tabs class="tabs-dark tabs-icon-left" id="horoscop-zodia">
 			<ion-tab title="Azi">
-				<div on-swipe-left="goToTab(1)" on-swipe-right="goToTab(2)">
+				<div on-drag-left="goToTab(1)" on-drag-right="goToTab(2)">
 					<h1>
 						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
 
@@ -105,7 +105,7 @@
 			</ion-tab>
 
 			<ion-tab title="Maine">
-				<div on-swipe-left="goToTab(2)" on-swipe-right="goToTab(0)">
+				<div on-drag-left="goToTab(2)" on-drag-right="goToTab(0)">
 					<h1>
 						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
 
@@ -119,7 +119,7 @@
 			</ion-tab>
 
 			<ion-tab title="Poimaine">
-				<div on-swipe-left="goToTab(0)" on-swipe-right="goToTab(1)">
+				<div on-drag-left="goToTab(0)" on-drag-right="goToTab(1)">
 					<h1>
 						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
 
