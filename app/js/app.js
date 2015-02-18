@@ -86,7 +86,7 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             pushNotification = window.plugins.pushNotification;
             pushNotification.register($rootScope.successHandler, $rootScope.errorHandler, {
                 "senderID": "396262474482",
-                "ecb"     : "$rootScope.onNotification"
+                "ecb"     : "onNotification"
             });
 
         }
