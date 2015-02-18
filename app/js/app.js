@@ -84,12 +84,12 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
             gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-59857602-2", 1);
 
             pushNotification = window.plugins.pushNotification;
-           /*
-            pushNotification.register($rootScope.successHandler, $rootScope.errorHandler, {
-                "senderID": "396262474482",
-                "ecb"     : "onNotification"
-            });
-            */
+            /*
+             pushNotification.register($rootScope.successHandler, $rootScope.errorHandler, {
+             "senderID": "396262474482",
+             "ecb"     : "onNotification"
+             });
+             */
 
         }
     }, false);
@@ -234,3 +234,9 @@ zodiacA.filter('toArray', function () {
         });
     }
 });
+
+zodiacA.filter('ucfirst', function () {
+    return function (input, arg) {
+        return input.replace(/(?:^|\s)\S/g, function (a) { return a.toUpperCase(); });
+    };
+})

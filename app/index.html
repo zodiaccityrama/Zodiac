@@ -76,7 +76,7 @@
 	<ion-view view-title="Horoscop {{zodii[zodia].nume}}" cache-view="false">
 		<ion-tabs class="tabs-dark tabs-icon-left" id="horoscop-zodia">
 			<ion-tab title="Azi">
-				<ion-content on-drag-right="goToTab(4)" on-drag-left="goToTab(1)">
+				<ion-content on-swipe-right="goToTab(4)" on-swipe-left="goToTab(1)">
 					<h1>
 						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
 
@@ -86,6 +86,7 @@
 						</div>
 					</h1>
 					<div ng-bind-html="horoscop.azi.horoscop" class="horoscop"></div>
+					<br/><br/><br/>
 				</ion-content>
 			</ion-tab>
 
@@ -100,6 +101,7 @@
 						</div>
 					</h1>
 					<div ng-bind-html="horoscop.maine.horoscop" class="horoscop"></div>
+					<br/><br/><br/>
 				</ion-content>
 			</ion-tab>
 
@@ -114,6 +116,7 @@
 						</div>
 					</h1>
 					<div ng-bind-html="horoscop.poimaine.horoscop" class="horoscop"></div>
+					<br/><br/><br/>
 				</ion-content>
 			</ion-tab>
 
@@ -121,32 +124,35 @@
 				<ion-content on-drag-right="goToTab(2)" on-drag-left="goToTab(4)">
 					<h1>
 						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
-
 						<div>
 							{{zodii[zodia].nume}}
 							<span class="subtitle">{{horoscop.lunar.luna}}</span>
 						</div>
 					</h1>
 					<div ng-repeat="(key, value) in horoscop.lunar.horoscop" class="horoscop">
-						<h2>{{key}}</h2>
+						<h2 style="margin-top: 30px;" ng-if="!$first">{{key | ucfirst}}</h2>
+
+						<h2 ng-if="$first">{{key | ucfirst}}</h2>
 						<span ng-bind-html="value"></span>
 					</div>
+					<br/><br/><br/>
 				</ion-content>
 			</ion-tab>
 			<ion-tab title="{{horoscop.anual.an}}">
-				<ion-content on-drag-right="goToTab(3)" on-drag-left="goToTab(0)">
+				<ion-content on-swipe-right="goToTab(3)" on-swipe-left="goToTab(0)">
 					<h1>
 						<i class="icon-zodia {{zodii[zodia].iconita}}-2 bg-{{zodii[zodia].iconita}}"></i>
-
 						<div>
 							{{zodii[zodia].nume}}
 							<span class="subtitle">{{horoscop.anual.an}}</span>
 						</div>
 					</h1>
 					<div ng-repeat="(key, value) in horoscop.anual.horoscop" class="horoscop">
-						<h2>{{key}}</h2>
+						<h2 style="margin-top: 30px;" ng-if="!$first">{{key | ucfirst}}</h2>
+						<h2 ng-if="$first">{{key | ucfirst}}</h2>
 						<span ng-bind-html="value"></span>
 					</div>
+					<br/><br/><br/>
 				</ion-content>
 			</ion-tab>
 
