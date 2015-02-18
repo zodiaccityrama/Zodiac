@@ -8,6 +8,7 @@
 	<link href="css/style.min.css" rel="stylesheet">
 	<script src="js/ionic.bundle.min.js"></script>
 	<script src="cordova.js"></script>
+	<script src="PushNotification.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 </head>
@@ -87,8 +88,7 @@
 
 <!-- Horoscop Zodia -->
 <script id="horoscop-zodia.html" type="text/ng-template">
-	<ion-view view-title="Horoscop Taur" cache-view="false">
-
+	<ion-view view-title="Horoscop {{zodii[zodia].nume}}" cache-view="false">
 		<ion-tabs class="tabs-dark tabs-icon-left" id="horoscop-zodia">
 			<ion-tab title="Azi">
 				<div on-drag-left="goToTab(1)" on-drag-right="goToTab(2)">

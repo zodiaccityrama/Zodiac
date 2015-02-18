@@ -12,7 +12,7 @@ function nativePluginResultHandler(result) {
 }
 
 function nativePluginErrorHandler(error) {
-    alert('nativePluginErrorHandler - '+error);
+    alert('nativePluginErrorHandler - ' + error);
     //console.log('nativePluginErrorHandler: ' + error);
 }
 
@@ -28,7 +28,6 @@ var zodiacA = angular.module('zodiacApp', [
 ]);
 
 
-
 zodiacA.run(function ($ionicPlatform, $rootScope) {
 
     $ionicPlatform.ready(function () {
@@ -42,13 +41,50 @@ zodiacA.run(function ($ionicPlatform, $rootScope) {
     });
 
 
+    $rootScope.successHandler = function (result) {
+        alert('Callback Success! Result = ' + result)
+    };
+    $rootScope.errorHandler = function (error) {
+        alert(error);
+    };
+
+    $rootScope.onNotificationGCM = function (e) {
+        switch (e.event) {
+            case 'registered':
+                if (e.regid.length > 0) {
+                    console.log("Regid " + e.regid);
+                    alert('registration id = ' + e.regid);
+                }
+                break;
+
+            case 'message':
+                // this is the actual push notification. its format depends on the data model from the push server
+                alert('message = ' + e.message + ' msgcnt = ' + e.msgcnt);
+                break;
+
+            case 'error':
+                alert('GCM error = ' + e.msg);
+                break;
+
+            default:
+                alert('An unknown GCM event has occurred');
+                break;
+        }
+    };
+
     document.addEventListener("deviceready", function () { //asta merge
         if (ionic.Platform.isWebView()) {
             gaPlugin = window.plugins.gaPlugin;
-            gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler,"UA-59857602-2", 1);
+            gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-59857602-2", 1);
+
+
+            var pushNotification = window.plugins.pushNotification;
+            pushNotification.register($rootScope.successHandler, $rootScope.errorHandler, {
+                "senderID": "396262474482",
+                "ecb"     : "$rootScope.onNotificationGCM"
+            });
         }
     }, false);
-
 
 
     $rootScope.zodii = {
